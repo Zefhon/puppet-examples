@@ -1,0 +1,30 @@
+#some facts that are commonly used
+#legacy facts
+
+$::timezone
+$::ipaddress
+$::fqdn
+$::domain
+
+    operatingsystem ( same of $::os['operatingsystem'] )
+    osfamily ( same of $::os['family'] )
+    operatingsystemrelease ( same of $::os['version']['full'] )
+    architecture ( same of $::os['architecture'] )
+    ipaddress ( same of $::networking['interfaces']["${::networking['primary']}"]['ip'] )
+    fqdn ( same of $::networking['fqdn'] )
+    hostname ( same of $::networking['hostname'] )
+    domain ( same of $::networking['domain'] )
+#modern facts
+
+
+    os: Basic system info
+    networking: Networking info and status
+    disks: Disks layout
+    filesystems: Filesystems layout
+    identity: Info about the user running Facter
+    memory: Info about system memory
+    processors: Info about CPUs
+    system_uptime: Uptime, in various units
+    ssh: System’s ssh host public keys in various formats
+    timezone: The system’s timezone
+    virtual: Name of Hypervisor, or ‘physical’ for physical machines
