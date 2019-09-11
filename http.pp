@@ -1,4 +1,4 @@
-#install http and ensures the service is running
+#install httpd and ensures the service is running
 service {'httpd':
   ensure => running,
   require => Package['httpd'],
